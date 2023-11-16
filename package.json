@@ -1,0 +1,41 @@
+{
+  "name": "jobsapi",
+  "version": "1.0.0",
+  "description": "jobs api project",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irachriskhan/JobsAPI.git"
+  },
+  "keywords": [
+    "jobsapi"
+  ],
+  "author": "Christophe Irakoze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Irachriskhan/JobsAPI/issues"
+  },
+  "homepage": "https://github.com/Irachriskhan/JobsAPI#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.1.4",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1",
+    "nodemon": "^3.0.1",
+    "rate-limiter": "^0.2.0",
+    "swagger-ui-express": "^5.0.0",
+    "xss-clean": "^0.1.4",
+    "yamljs": "^0.3.0"
+  }
+}
