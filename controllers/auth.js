@@ -33,7 +33,13 @@ const login = async (req, res) => {
     .json({ user: { name: user.name, email: user.email }, token });
 };
 
+const deleteAll = async (req, res) => {
+  // await User.deleteMany();
+  res.send("All Users are deleted");
+};
+
 module.exports = {
   register,
   login,
+  deleteAll,
 };
