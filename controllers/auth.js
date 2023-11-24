@@ -27,6 +27,7 @@ const login = async (req, res) => {
     throw new UnauthenticatedError("Invalid Password");
   }
 
+  // compare password
   const token = user.createJWT();
   res
     .status(StatusCodes.OK)
