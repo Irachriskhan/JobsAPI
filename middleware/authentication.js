@@ -4,17 +4,17 @@ const { UnauthenticatedError } = require("../errors");
 
 const authenticateUser = (req, res, next) => {
   // check the header
-  const authHeader = req.headears.authorization;
-  if (!authHeader || !authHeader.startWith("Bearer ")) {
-    // console.log("token has no bearer");
-    throw new UnauthenticatedError("Authentication Invalid");
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    throw new UnauthenticatedError("Access Denied. Please login");
   }
-  // console.log("token has everything");
+
   const token = authHeader.split(" ")[1];
+  console.log("Token is splitted");
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // Attach the user to the job routes
-    const user = User.findById(payload.id).select("-password");
+    const user = User.findById(payload.id).select("-password"); //remove the psd
     req.user = user;
 
     req.user = { userId: payload.userId, name: payload.name };
