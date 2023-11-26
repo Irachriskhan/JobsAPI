@@ -10,7 +10,6 @@ const authenticateUser = (req, res, next) => {
   }
 
   const token = authHeader.split(" ")[1];
-  console.log("Token is splitted");
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // Attach the user to the job routes
